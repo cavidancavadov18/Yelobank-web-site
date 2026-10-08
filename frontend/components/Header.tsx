@@ -16,6 +16,7 @@ export function Header({ locale }: { locale: Locale }) {
     { href: `/${locale}/cards`, label: t.cards },
     { href: `/${locale}/loans`, label: t.loans },
     { href: `/${locale}/deposits`, label: t.deposits },
+    { href: `/${locale}/invest`, label: t.invest },
     { href: `/${locale}/cashback`, label: t.cashback },
     { href: `/${locale}/news`, label: t.news },
     { href: `/${locale}/branches`, label: t.branches },
@@ -29,7 +30,7 @@ export function Header({ locale }: { locale: Locale }) {
   }
 
   const biz = pathname.includes("/business");
-  const bankSection = ["/cards", "/loans", "/deposits", "/cashback", "/business", "/queue"].some((part) => pathname.includes(part));
+  const bankSection = ["/cards", "/loans", "/deposits", "/invest", "/cashback", "/business", "/queue"].some((part) => pathname.includes(part));
   if (pathname === `/${locale}` || bankSection) {
     const top = biz
       ? [
@@ -52,6 +53,7 @@ export function Header({ locale }: { locale: Locale }) {
           { href: `/${locale}/loans`, label: t.loans },
           { href: `/${locale}/cards`, label: t.cards },
           { href: `/${locale}/deposits`, label: t.deposits },
+          { href: `/${locale}/invest`, label: t.invest },
           { href: `/${locale}/cashback`, label: t.cashback },
           { href: `/${locale}/branches`, label: t.branches },
           { href: `/${locale}/apply`, label: t.apply },
@@ -113,7 +115,7 @@ export function Header({ locale }: { locale: Locale }) {
                 href={item.href}
                 className={
                   pathname.startsWith(item.href) &&
-                  ["/cards", "/loans", "/deposits", "/cashback", "/business"].some((part) => item.href.endsWith(part))
+                  ["/cards", "/loans", "/deposits", "/invest", "/cashback", "/business"].some((part) => item.href.endsWith(part))
                     ? "is-current"
                     : ""
                 }

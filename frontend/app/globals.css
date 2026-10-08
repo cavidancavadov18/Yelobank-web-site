@@ -363,6 +363,7 @@ html[data-theme="night"] .page:has(.home-view),
 html[data-theme="night"] .page:has(.loans-view),
 html[data-theme="night"] .page:has(.cards-view),
 html[data-theme="night"] .page:has(.cash-view),
+html[data-theme="night"] .page:has(.invest-view),
 html[data-theme="night"] .page:has(.biz-view),
 html[data-theme="night"] .bank-foot {
   background: transparent;
@@ -443,7 +444,7 @@ html[data-theme="night"] .bank-header .logo-fallback span,
 .bank-header.biz .logo-fallback span {
   color: #161616;
 }
-.bank-nav { gap: 28px; font-size: 16px; font-weight: 650; }
+.bank-nav { gap: 18px; font-size: 15px; font-weight: 650; flex-wrap: wrap; }
 .bank-nav a { padding-bottom: 4px; }
 .bank-nav a.is-current { box-shadow: inset 0 -2px 0 #111; }
 .bank-burger {
@@ -1484,6 +1485,110 @@ html[data-theme="night"] .home-stories { background: transparent; }
 .biz-row strong { display: block; margin-bottom: 6px; font-size: 18px; }
 .biz-row span { font-size: 14px; line-height: 1.35; }
 
+.page:has(.invest-view) { padding: 0 0 72px; background: #fff; }
+.page:has(.invest-view) > .shell { width: 100%; max-width: none; }
+.invest-view { font-family: Arial, Helvetica, sans-serif; color: #161616; }
+.invest-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(280px, 1fr);
+  gap: 32px;
+  align-items: center;
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0 56px;
+}
+.invest-copy h1 {
+  margin: 0 0 16px;
+  font-size: 46px;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.invest-copy p { margin: 0 0 28px; max-width: 420px; color: #666; font-size: 18px; line-height: 1.45; }
+.invest-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: #f5c400;
+  color: #161616;
+  font-weight: 700;
+}
+.invest-stage {
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+  border-radius: 28px;
+  background: #ffe14a;
+}
+.invest-phone {
+  width: 210px;
+  padding: 18px 16px 14px;
+  border-radius: 22px;
+  background: #171717;
+  color: #f4f4f4;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
+}
+.invest-phone strong { display: block; margin-bottom: 12px; color: #f5c400; font-size: 14px; }
+.invest-phone span {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+}
+.invest-phone em { font-style: normal; color: #f5c400; }
+.invest-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 28px max(24px, calc((100% - 1100px) / 2));
+  list-style: none;
+  background: #14915f;
+  color: #fff;
+}
+.invest-facts li { text-align: center; font-size: 16px; line-height: 1.35; }
+.invest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  width: min(1100px, calc(100% - 48px));
+  margin: 36px auto;
+}
+.invest-grid article {
+  padding: 22px;
+  border-radius: 18px;
+  background: #f6f6f6;
+}
+.invest-grid h2, .invest-steps h2, .invest-faq h2 { margin: 0 0 10px; font-size: 22px; font-weight: 700; }
+.invest-grid h3 { margin: 14px 0 4px; font-size: 16px; }
+.invest-grid p, .invest-faq p { margin: 0; color: #555; line-height: 1.45; }
+.invest-bars { display: grid; gap: 8px; margin-top: 16px; }
+.invest-bars i { display: block; height: 10px; border-radius: 999px; background: #f5c400; }
+.invest-grid svg { width: 100%; height: 80px; margin-top: 12px; }
+.invest-steps, .invest-faq { width: min(1100px, calc(100% - 48px)); margin: 0 auto 28px; }
+.invest-steps ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.invest-steps li { padding: 16px; border-radius: 16px; background: #fff4c2; }
+.invest-faq details { border-top: 1px solid #ececec; }
+.invest-faq summary { padding: 14px 0; cursor: pointer; font-weight: 650; }
+.invest-faq details p { padding: 0 0 14px; }
+html[data-theme="night"] .invest-view,
+html[data-theme="night"] .invest-copy h1,
+html[data-theme="night"] .invest-grid h2,
+html[data-theme="night"] .invest-grid h3,
+html[data-theme="night"] .invest-steps h2,
+html[data-theme="night"] .invest-faq h2,
+html[data-theme="night"] .invest-faq summary { color: #f3f6fb; }
+html[data-theme="night"] .invest-copy p,
+html[data-theme="night"] .invest-grid p,
+html[data-theme="night"] .invest-faq p { color: rgba(243, 246, 251, 0.72); }
+html[data-theme="night"] .invest-grid article { background: #122033; }
+html[data-theme="night"] .invest-steps li { background: #122033; color: #f3f6fb; }
+html[data-theme="night"] .invest-faq details { border-top-color: rgba(255, 255, 255, 0.14); }
+html[data-theme="night"] .invest-grid svg polyline { stroke: #f5c400; }
+
 @media (max-width: 800px) {
   .cash-hero { height: auto; margin-top: 0; grid-template-columns: 1fr; padding: 36px 20px 28px; }
   .cash-hero h1 { font-size: 32px; }
@@ -1491,4 +1596,6 @@ html[data-theme="night"] .home-stories { background: transparent; }
   .cash-grid { grid-template-columns: 1fr; }
   .biz-hero, .biz-row { grid-template-columns: 1fr; }
   .biz-art strong { font-size: 96px; }
+  .invest-hero, .invest-facts, .invest-grid, .invest-steps ol { grid-template-columns: 1fr; }
+  .invest-copy h1 { font-size: 34px; }
 }

@@ -25,6 +25,7 @@ export function ApplyForm({
     event.preventDefault();
     setStatus("sending");
     const selected = products.find((item) => item.slug === product);
+    const extraNote = !selected && product === "invest" ? "Yelo Invest" : "";
     const response = await fetch("/api/applications/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,7 +33,7 @@ export function ApplyForm({
         full_name: fullName,
         phone,
         product: selected ? selected.id : null,
-        note,
+        note: [extraNote, note].filter(Boolean).join(". "),
       }),
     });
     if (!response.ok) {
@@ -59,6 +60,7 @@ export function ApplyForm({
         {t.product}
         <select value={product} onChange={(event) => setProduct(event.target.value)}>
           <option value="">{t.none}</option>
+          {product === "invest" ? <option value="invest">Yelo Invest</option> : null}
           {products.map((item) => (
             <option key={item.slug} value={item.slug}>
               {item.title}
