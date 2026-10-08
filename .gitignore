@@ -1,9 +1,38 @@
+# Secrets. The example file stays so the project can be set up.
 .env
+.env.*
+!.env.example
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+db.sqlite3
+
+# Django uploads and collected files
 backend/staticfiles/
 backend/media/
-frontend/node_modules/
+
+# Node and Next.js
+node_modules/
 frontend/.next/
-frontend/tsconfig.tsbuildinfo
+frontend/out/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs and OS junk
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.idea/
+.vscode/
