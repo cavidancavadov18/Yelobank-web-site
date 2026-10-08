@@ -10,7 +10,7 @@ export function Footer() {
   if (
     !isLocale(locale) ||
     pathname === `/${locale}` ||
-    ["/cards", "/loans", "/deposits", "/cashback", "/business", "/queue"].some((part) => pathname.includes(part))
+    ["/cards", "/loans", "/deposits", "/invest", "/cashback", "/business", "/queue"].some((part) => pathname.includes(part))
   ) {
     return null;
   }
